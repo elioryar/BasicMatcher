@@ -13,7 +13,7 @@ class JobViews(APIView):
     #insert new job to the DB
     def post(self, request):
         serializer = JobSerializer(data={
-            'title': request.data.get("title"),
+            'title': request.data.get("title").lower(),
             'skills': [skill.lower() for skill in request.data.get("skills")] 
         })
         if serializer.is_valid():
@@ -37,7 +37,7 @@ class CandidateViews(APIView):
     #insert new candidate to the DB
     def post(self, request):
         serializer = CandidateSerializer(data={
-            'title': request.data.get("title"),
+            'title': request.data.get("title").lower(),
             'skills': [skill.lower() for skill in request.data.get("skills")] 
         })
         if serializer.is_valid():
