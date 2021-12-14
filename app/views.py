@@ -12,11 +12,14 @@ from .models import Job, Candidate
 class JobViews(APIView):
     #insert new job to the DB
     def post(self, request):
-        serializer = JobSerializer(data={
-            'title': request.data.get("title").lower(),
-            'skills': [skill.lower() for skill in request.data.get("skills")] 
-        })
+        serializer = JobSerializer(data=request.data)
         if serializer.is_valid():
+            # Change the data to lowercase
+            serializer = JobSerializer(data={
+                'title': request.data.get("title").lower(),
+                'skills': [skill.lower() for skill in request.data.get("skills")] 
+            })
+            serializer.is_valid()
             serializer.save()
             return Response({"status": "success", "job_id": serializer.data.get("id")}, status=status.HTTP_200_OK)
         else:
@@ -36,11 +39,14 @@ class JobViews(APIView):
 class CandidateViews(APIView):
     #insert new candidate to the DB
     def post(self, request):
-        serializer = CandidateSerializer(data={
-            'title': request.data.get("title").lower(),
-            'skills': [skill.lower() for skill in request.data.get("skills")] 
-        })
+        serializer = CandidateSerializer(data=request.data)
         if serializer.is_valid():
+            # Change the data to lowercase
+            serializer = CandidateSerializer(data={
+                'title': request.data.get("title").lower(),
+                'skills': [skill.lower() for skill in request.data.get("skills")] 
+            })
+            serializer.is_valid()
             serializer.save()
             return Response({"status": "success", "candidate_id": serializer.data.get("id")}, status=status.HTTP_200_OK)
         else:
