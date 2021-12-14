@@ -23,7 +23,7 @@ To test the server please go to http://localhost:8000/app from Postman or any ot
 ```   
 {
   title: string
-  skils - list of string
+  skils: list of string
   }
 ```  
   
@@ -32,7 +32,7 @@ To test the server please go to http://localhost:8000/app from Postman or any ot
   ```   
 {
   title: string
-  skils - list of string
+  skils: list of string
   }
 ```  
   *	**Get:**  `/candidate` – return all the candidates from the candidate table in DB
