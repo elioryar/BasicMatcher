@@ -27,7 +27,7 @@ To test the server please go to http://localhost:8000/app from Postman or any ot
   }
 ```  
   
-  *	**Get:** `/job` – return all the jobs from the jobs table in DB
+  *	**Get:** `/job` – return all the jobs from the job table in DB
   *	**Post:** `/candidate` - add new candidate to the DB, return the candidate-id  
   ```   
 {
@@ -41,6 +41,6 @@ To test the server please go to http://localhost:8000/app from Postman or any ot
 I attached to the email my postman collection with these requests (gloatApp.postman_collection)
 
 
-Thank you,
+Thank you,  
 Elior Abargel
 
